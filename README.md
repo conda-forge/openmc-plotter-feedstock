@@ -1,11 +1,11 @@
-About openmc-plotter
-====================
+About openmc-plotter-feedstock
+==============================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/openmc-plotter-feedstock/blob/main/LICENSE.txt)
 
 Home: https://github.com/openmc-dev/plotter
 
 Package license: MIT
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/openmc-plotter-feedstock/blob/main/LICENSE.txt)
 
 Summary: Plotting tool for OpenMC models and tally data
 

@@ -1,5 +1,5 @@
 {% set name = "openmc-plotter" %}
-{% set version = "0.2.0" %}
+{% set version = "0.3.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/openmc-plotter-{{ version }}.tar.gz
-  sha256: 06e9e17f12f119e81b9fbf80cee9276cf3ec144a6be9f783b304646d357c32b4
+  sha256: 22a1d954bd91a84ed282282cbec7e1d88f70876bfe0afde90a765a1668a5b3a8
 build:
   entry_points:
     - openmc-plotter=openmc_plotter.__main__:main

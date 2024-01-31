@@ -23,7 +23,7 @@ requirements:
     - matplotlib-base
     - numpy
     - openmc >0.12.2
-    - pyside2
+    - pyside6
     - python  >=3.6
 
 test:

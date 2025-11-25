@@ -23,7 +23,7 @@ requirements:
   run:
     - matplotlib-base
     - numpy
-    - openmc >0.12.2
+    - openmc >=0.15.0
     - pyside6
     - python >={{ python_min }}
 

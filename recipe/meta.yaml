@@ -19,11 +19,13 @@ requirements:
   host:
     - pip
     - python {{ python_min }}
-    - setuptools
+    - setuptools >=80
+    - setuptools-scm >=8
+    - wheel
   run:
     - matplotlib-base
     - numpy
-    - openmc >=0.15.0
+    - openmc >=0.16.0
     - pyside6
     - python >={{ python_min }}
 
@@ -32,6 +34,8 @@ test:
     - openmc_plotter
   commands:
     - pip check
+    - python -c "import openmc_plotter; assert openmc_plotter.__version__ == '{{ version }}'"
+    - python -c "from openmc.lib import slice_data, slice_data_overlap_info"
   requires:
     - pip
     - python {{ python_min }}

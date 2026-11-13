@@ -1,13 +1,13 @@
 {% set name = "openmc-plotter" %}
-{% set version = "0.5.0" %}
+{% set version = "0.6.0" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name | replace('-', '_') }}-{{ version }}.tar.gz
-  sha256: dd827f0dfd30da73d9b814973d86df1451a1be1f66b6f0964c28cbd4d3bca80e
+  url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/{{ name }}/{{ name | replace('-', '_') }}-{{ version }}.tar.gz
+  sha256: 1eb558afdb57c024df05f3a291bc7cbc5778707a8b8ecd6f5ca7c792f0b57df3
 build:
   entry_points:
     - openmc-plotter=openmc_plotter.__main__:main
@@ -19,11 +19,13 @@ requirements:
   host:
     - pip
     - python {{ python_min }}
-    - setuptools
+    - setuptools >=80
+    - setuptools-scm >=8
+    - wheel
   run:
     - matplotlib-base
     - numpy
-    - openmc >=0.15.0
+    - openmc >=0.16.0
     - pyside6
     - python >={{ python_min }}
 
@@ -32,6 +34,8 @@ test:
     - openmc_plotter
   commands:
     - pip check
+    - python -c "import openmc_plotter; assert openmc_plotter.__version__ == '{{ version }}'"
+    - python -c "from openmc.lib import slice_data, slice_data_overlap_info"
   requires:
     - pip
     - python {{ python_min }}
